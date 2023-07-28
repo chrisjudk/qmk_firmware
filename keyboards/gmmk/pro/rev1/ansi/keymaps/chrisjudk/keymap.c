@@ -48,12 +48,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [1] = LAYOUT(
-        _______, KC_MYCM,  KC_WHOM, KC_CALC, KC_MSEL, KC_MPRV, KC_MNXT, KC_MPLY, KC_MSTP, KC_MUTE, KC_VOLD, KC_VOLU, NK_ON,   NK_OFF,            _______,
-        _______, _______,  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,           RCTL(RALT(KC_DEL)),
-        RGB_TOG, RGB_MOD, RGB_HUI, RGB_SAI, RGB_VAI, RGB_SPI, _______, _______, _______, _______, _______, _______, _______, QK_BOOT,           _______,
-        _______, RGB_RMOD,  RGB_HUD, RGB_SAD, RGB_VAD, RGB_SPD, _______, _______, _______, _______, _______, _______,          EE_CLR,            TG(1),
-        _______,           _______, _______, _______, _______, _______, NK_TOGG, _______, _______, _______, _______,          _______, KC_PGUP,  TG(0),
-        _______, _______,  _______,                            _______,                            _______, _______, _______, KC_HOME, KC_PGDN,  KC_END
+        _______, KC_MYCM,  KC_WHOM, KC_CALC, KC_MSEL, KC_MPRV, KC_MNXT, KC_MPLY, KC_MSTP, KC_MUTE, KC_VOLD, KC_VOLU, NK_ON,    NK_OFF,            _______,
+        _______, _______,  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______,           RCTL(RALT(KC_DEL)),
+        RGB_TOG, RGB_MOD,  RGB_HUI, RGB_SAI, RGB_VAI, RGB_SPI, _______, _______, _______, _______, _______, _______, _______,  QK_BOOT,           _______,
+        _______, RGB_RMOD, RGB_HUD, RGB_SAD, RGB_VAD, RGB_SPD, _______, _______, _______, _______, _______, _______,           EE_CLR,            TG(1),
+        _______,           _______, _______, _______, _______, _______, NK_TOGG, _______, _______, _______, _______,           _______, KC_PGUP,  TG(0),
+        _______, _______,  _______,                            _______,                            _______, _______, _______,  KC_HOME, KC_PGDN,  KC_END
     ),
 
 
@@ -67,11 +67,34 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
 };
 #endif
 
+// RGB LED layout
+
+// led number, function of the key
+
+//  67, Side led 01    0, ESC      6, F1       12, F2       18, F3       23, F4       28, F5       34, F6       39, F7       44, F8       50, F9       56, F10      61, F11      66, F12      69, Prt       Rotary(Mute)   68, Side led 12
+//  70, Side led 02    1, ~        7, 1        13, 2        19, 3        24, 4        29, 5        35, 6        40, 7        45, 8        51, 9        57, 0        62, -_       78, (=+)     85, BackSpc   72, Del        71, Side led 13
+//  73, Side led 03    2, Tab      8, Q        14, W        20. E        25, R        30, T        36, Y        41, U        46, I        52, O        58, P        63, [{       89, ]}       93, \|        75, PgUp       74, Side led 14
+//  76, Side led 04    3, Caps     9, A        15, S        21, D        26, F        31, G        37, H        42, J        47, K        53, L        59, ;:       64, '"                    96, Enter     86, PgDn       77, Side led 15
+//  80, Side led 05    4, Sh_L     10, Z       16, X        22, C        27, V        32, B        38, N        43, M        48, ,<       54, .<       60, /?                    90, Sh_R     94, Up        82, End        81, Side led 16
+//  83, Side led 06    5, Ct_L     11,Win_L    17, Alt_L                              33, SPACE                              49, Alt_R    55, FN                    65, Ct_R     95, Left     97, Down      79, Right      84, Side led 17
+//  87, Side led 07                                                                                                                                                                                                        88, Side led 18
+//  91, Side led 08                     
+
+
 bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max)
 {
 	if (host_keyboard_led_state().caps_lock)
 	{
-		rgb_matrix_set_color(3, 255, 0, 0); //capslock key
+		//rgb_matrix_set_color(pin, r, g, b);
+		rgb_matrix_set_color(3, 255, 255, 255); //capslock key
+		rgb_matrix_set_color(67, 255, 255, 255);
+		rgb_matrix_set_color(70, 255, 255, 255);
+		rgb_matrix_set_color(73, 255, 255, 255);
+		rgb_matrix_set_color(76, 255, 255, 255);
+		rgb_matrix_set_color(80, 255, 255, 255);
+		rgb_matrix_set_color(83, 255, 255, 255);
+		rgb_matrix_set_color(87, 255, 255, 255);
+		rgb_matrix_set_color(91, 255, 255, 255);
 	}
 	return false;
 }
