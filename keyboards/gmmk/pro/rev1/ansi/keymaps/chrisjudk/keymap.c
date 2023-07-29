@@ -87,14 +87,14 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max)
 	{
 		//rgb_matrix_set_color(pin, r, g, b);
 		rgb_matrix_set_color(3, 255, 255, 255); //capslock key
-		rgb_matrix_set_color(67, 255, 255, 255);
-		rgb_matrix_set_color(70, 255, 255, 255);
-		rgb_matrix_set_color(73, 255, 255, 255);
-		rgb_matrix_set_color(76, 255, 255, 255);
-		rgb_matrix_set_color(80, 255, 255, 255);
-		rgb_matrix_set_color(83, 255, 255, 255);
-		rgb_matrix_set_color(87, 255, 255, 255);
-		rgb_matrix_set_color(91, 255, 255, 255);
+		rgb_matrix_set_color(67, 255, 255, 255); //Side LED 01
+		rgb_matrix_set_color(70, 255, 255, 255); //Side LED 02
+		rgb_matrix_set_color(73, 255, 255, 255); //Side LED 03
+		rgb_matrix_set_color(76, 255, 255, 255); //Side LED 04
+		rgb_matrix_set_color(80, 255, 255, 255); //Side LED 05
+		rgb_matrix_set_color(83, 255, 255, 255); //Side LED 06
+		rgb_matrix_set_color(87, 255, 255, 255); //Side LED 07
+		rgb_matrix_set_color(91, 255, 255, 255); //Side LED 08
 	}
 	return false;
 }
