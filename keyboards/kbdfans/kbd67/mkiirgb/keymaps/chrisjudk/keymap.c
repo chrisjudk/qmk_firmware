@@ -18,7 +18,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 */
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		[0] = LAYOUT_65_ansi_blocker( // Base
-			KC_ESCAPE,      KC_1,     KC_2,     KC_3,  KC_4,  KC_5,  KC_6,    KC_7,  KC_8,    KC_9,     KC_0,     KC_MINS,  KC_EQL,  KC_BSPC,   KC_DEL,
+			KC_ESC,      KC_1,     KC_2,     KC_3,  KC_4,  KC_5,  KC_6,    KC_7,  KC_8,    KC_9,     KC_0,     KC_MINS,  KC_EQL,  KC_BSPC,   KC_DEL,
 		    KC_TAB,         KC_Q,     KC_W,     KC_E,  KC_R,  KC_T,  KC_Y,    KC_U,  KC_I,    KC_O,     KC_P,     KC_LBRC,  KC_RBRC, KC_BSLS,   KC_PGUP,
 			KC_CAPS,        KC_A,     KC_S,     KC_D,  KC_F,  KC_G,  KC_H,    KC_J,  KC_K,    KC_L,     KC_SCLN,  KC_QUOT,           KC_ENT,    KC_PGDN,
 		    KC_LSFT,        KC_Z,     KC_X,     KC_C,  KC_V,  KC_B,  KC_N,    KC_M,  KC_COMM, KC_DOT,   KC_SLSH,  KC_RSFT,           KC_UP,     KC_END,
@@ -32,7 +32,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 enum LEDS{
-	LED_ESCAPE,LED_ONE,LED_TWO,LED_THREE,LED_FOUR,LED_FIVE,LED_SIX,LED_SEVEN,LED_EIGHT,LED_NINE,LED_ZERO,LED_MINUS,LED_PLUS,LED_BSPC,LED_DEL,
+	LED_ESC,LED_ONE,LED_TWO,LED_THREE,LED_FOUR,LED_FIVE,LED_SIX,LED_SEVEN,LED_EIGHT,LED_NINE,LED_ZERO,LED_MINS,LED_EQL,LED_BSPC,LED_DEL,
     LED_TAB,LED_Q,LED_W,LED_E,LED_R,LED_T,LED_Y,LED_U,LED_I,LED_O,LED_P,LED_LBRC,LED_RBRC,LED_BSLS,LED_PGUP,
     LED_CAPS,LED_A,LED_S,LED_D,LED_F,LED_G,LED_H,LED_J,LED_K,LED_L,LED_SCLN,LED_QUOT,LED_ENT,LED_PGDN,
     LED_LSFT,LED_Z,LED_X,LED_C,LED_V,LED_B,LED_N,LED_M,LED_COMM,LED_DOT,LED_SLSH,LED_RSFT,LED_UP,LED_END,
@@ -47,7 +47,7 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max)
         rgb_matrix_set_color_all(RGB_WHITE);
         uint8_t red[] = {LED_CAPS,LED_LSFT,LED_RSFT};
 		uint8_t black[] = {
-            LED_ESCAPE,LED_DEL,
+            LED_ESC,LED_DEL,
 			LED_TAB, LED_PGUP,
             LED_PGDN,
             LED_UP,LED_END,
